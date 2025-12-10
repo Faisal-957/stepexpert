@@ -1,54 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CustomButtons1 extends StatelessWidget {
-  final String text;
-  final String price;
+  Color? borderColor;
+  Color? boxColor;
+  double? borderRadius;
+  Widget? child;
+  LinearGradient? linearGradient;
+  VoidCallback? onTap;
 
-  const CustomButtons1({super.key, required this.text, required this.price});
+  CustomButtons1({
+    required this.child,
+    this.borderColor,
+    this.borderRadius,
+    this.boxColor,
+    this.linearGradient,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 48.7626953125,
-      width: 253.6759033203125,
-      decoration: BoxDecoration(
-        boxShadow: [
-          BoxShadow(
-            spreadRadius: 1.1,
-            blurRadius: 4.0,
-            color: Color(0xff000040).withValues(alpha: 0.3),
-            // blurStyle: BlurStyle.solid,
-            offset: Offset(0, 2),
-          ),
-        ],
-        borderRadius: BorderRadius.circular(10),
-        color: Color(0xffE12D59),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              text,
-              style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        decoration: BoxDecoration(
+          gradient:
+              linearGradient ??
+              LinearGradient(
+                begin: Alignment.centerLeft,
+                end: Alignment.centerLeft,
+                colors: [Colors.transparent, Colors.transparent],
               ),
-            ),
-            Text(
-              price,
-              style: GoogleFonts.poppins(
-                color: Colors.white,
-                fontSize: 16,
-                fontWeight: FontWeight.w300,
-              ),
+          boxShadow: [
+            BoxShadow(
+              spreadRadius: 1.1,
+              blurRadius: 4.0,
+              color: Color(0xff000040).withValues(alpha: 0.3),
+              // blurStyle: BlurStyle.solid,
+              offset: Offset(0, 2),
             ),
           ],
+          borderRadius: BorderRadius.circular(borderRadius ?? 10),
+          color: boxColor ?? Color(0xffE12D59),
+          border: Border.all(
+            width: 1,
+            color: borderColor ?? Colors.transparent,
+          ),
         ),
+        child: child,
       ),
     );
   }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stepexpert/core/constant/auth_decoration.dart';
 import 'package:stepexpert/core/constant/colors.dart';
 import 'package:stepexpert/core/constant/string.dart';
+import 'package:stepexpert/ui/views/custom_widgets/custom_buttons.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -44,42 +46,65 @@ class SignupScreen extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
 
-                    // ✅ TabBar
-                    const TabBar(
-                      indicatorWeight: 2,
-                      indicator: UnderlineTabIndicator(
-                        borderSide: BorderSide(
-                          width: 5.0,
-                          color: Colors.red,
-                        ), // thickness
-                        insets: EdgeInsets.symmetric(
-                          horizontal: -1,
-                        ), // start & end padding
-                      ),
-
-                      labelColor: primaryColor, // or primaryColor
-                      unselectedLabelColor: Colors.grey,
-                      indicatorColor: primaryColor,
-                      indicatorSize: TabBarIndicatorSize.label,
-                      labelStyle: TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
-                      ),
-                      tabs: [
-                        Tab(text: "Login"),
-                        Tab(text: "Sign Up"),
-                      ],
-                    ),
-
-                    // ✅ TabBarView to show content
-                    Expanded(
-                      child: TabBarView(
-                        children: [
-                          Center(child: Text("Login Form Here")),
-                          Center(child: Text("Sign Up Form Here")),
+                    Container(
+                      padding: EdgeInsets.only(left: 80, right: 80),
+                      child: TabBar(
+                        labelColor: Color(0xffFE2B5F),
+                        indicatorColor: Color(0xffFE2B5F),
+                        indicatorSize: TabBarIndicatorSize.tab,
+                        labelStyle: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        tabs: [
+                          Tab(text: "Login"),
+                          Tab(text: "Signup"),
                         ],
                       ),
                     ),
+                    SizedBox(height: 20),
+                    Expanded(
+                      child: TabBarView(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(left: 46, right: 46),
+                            child: Column(
+                              children: [
+                                TextFormField(
+                                  decoration: authdecoration.copyWith(
+                                    hintText: "User name ",
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                TextFormField(
+                                  decoration: authdecoration.copyWith(
+                                    hintText: "Email",
+                                  ),
+                                ),
+                                SizedBox(height: 10),
+                                TextFormField(
+                                  decoration: authdecoration.copyWith(
+                                    hintText: "Password",
+                                  ),
+                                ),
+                                SizedBox(height: 30),
+                                CustomButtons1(
+                                  linearGradient: LinearGradient(
+                                    colors: [primaryColor, Colors.blueAccent],
+                                  ),
+                                  child: Text(
+                                    "SignUp",
+                                    style: TextStyle(color: whiteColor),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    SizedBox(height: 10),
                   ],
                 ),
               ),
