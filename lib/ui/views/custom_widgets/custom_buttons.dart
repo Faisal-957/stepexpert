@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class CustomButtons1 extends StatelessWidget {
   Color? borderColor;
   Color? boxColor;
@@ -9,6 +10,7 @@ class CustomButtons1 extends StatelessWidget {
   VoidCallback? onTap;
 
   CustomButtons1({
+    super.key,
     required this.child,
     this.borderColor,
     this.borderRadius,

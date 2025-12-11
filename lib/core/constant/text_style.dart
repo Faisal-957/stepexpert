@@ -18,8 +18,8 @@ TextStyle style18 = GoogleFonts.mulish(
   color: whiteColor,
   fontWeight: FontWeight.bold,
 );
-TextStyle style12 = GoogleFonts.mulish(
+TextStyle style12 = GoogleFonts.poppins(
   fontSize: 12,
   color: whiteColor,
-  fontWeight: FontWeight.w400,
+  fontWeight: FontWeight.w500,
 );
