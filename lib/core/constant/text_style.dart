@@ -7,7 +7,7 @@ TextStyle style16 = GoogleFonts.poppins(
   color: Color(0xff585A66),
   fontWeight: FontWeight.w400,
 );
-TextStyle style24 = GoogleFonts.mulish(
+TextStyle style24 = GoogleFonts.poppins(
   fontSize: 24,
   color: whiteColor,
   fontWeight: FontWeight.bold,

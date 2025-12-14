@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stepexpert/core/constant/colors.dart';
 import 'package:stepexpert/core/constant/string.dart';
 import 'package:stepexpert/ui/views/custom_widgets/custom_buttons.dart';
 
@@ -49,6 +50,9 @@ class SubscriptionScreens extends StatelessWidget {
                     ),
                     SizedBox(height: 30),
                     CustomButtons1(
+                      boxColor: primaryColor,
+                      height: 50,
+                      width: 253,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(
@@ -77,6 +81,8 @@ class SubscriptionScreens extends StatelessWidget {
                     ),
                     SizedBox(height: 30),
                     CustomButtons1(
+                      height: 48,
+                      width: 253,
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Row(

@@ -5,6 +5,8 @@ class CustomButtons1 extends StatelessWidget {
   Color? borderColor;
   Color? boxColor;
   double? borderRadius;
+  double? height; // new
+  double? width;
   Widget? child;
   LinearGradient? linearGradient;
   VoidCallback? onTap;
@@ -17,6 +19,8 @@ class CustomButtons1 extends StatelessWidget {
     this.boxColor,
     this.linearGradient,
     this.onTap,
+    this.height,
+    this.width,
   });
 
   @override
@@ -25,15 +29,16 @@ class CustomButtons1 extends StatelessWidget {
       onTap: onTap,
       child: Container(
         alignment: Alignment.center,
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+        height: height, // added
+        width: width,
+        // padding: EdgeInsets.symmetric(horizontal: 16, vertical: 10),
         decoration: BoxDecoration(
-          gradient:
-              linearGradient ??
-              LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerLeft,
-                colors: [Colors.transparent, Colors.transparent],
-              ),
+          // 👇 IMPORTANT FIX
+          color: linearGradient == null
+              ? (boxColor ?? const Color(0xffE12D54))
+              : null,
+
+          gradient: linearGradient,
           boxShadow: [
             BoxShadow(
               spreadRadius: 1.1,
@@ -44,7 +49,7 @@ class CustomButtons1 extends StatelessWidget {
             ),
           ],
           borderRadius: BorderRadius.circular(borderRadius ?? 10),
-          color: boxColor ?? Color(0xffE12D59),
+
           border: Border.all(
             width: 1,
             color: borderColor ?? Colors.transparent,

@@ -29,6 +29,8 @@ class SignupScreen extends StatelessWidget {
               ),
               SizedBox(height: 20),
               CustomButtons1(
+                height: 42,
+                width: 297.36627197265625,
                 onTap: () {},
                 linearGradient: LinearGradient(
                   colors: [darkpink, primaryColor],
