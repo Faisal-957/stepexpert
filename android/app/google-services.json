@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "260227433666",
+    "project_id": "stepexpert-bed14",
+    "storage_bucket": "stepexpert-bed14.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260227433666:android:36c1e7a2d7e323ff14e75b",
+        "android_client_info": {
+          "package_name": "com.example.stepexpert"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJTtui8gXS8kM9yDCYpXa8XgcvV-9Toq4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

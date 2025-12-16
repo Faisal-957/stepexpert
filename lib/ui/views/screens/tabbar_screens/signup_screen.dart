@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:stepexpert/core/constant/auth_decoration.dart';
 import 'package:stepexpert/core/constant/colors.dart';
 import 'package:stepexpert/core/constant/text_style.dart';
 import 'package:stepexpert/ui/views/custom_widgets/custom_buttons.dart';
+import 'package:stepexpert/ui/views/screens/tabbar_screens/login_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -31,7 +33,12 @@ class SignupScreen extends StatelessWidget {
               CustomButtons1(
                 height: 42,
                 width: 297.36627197265625,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => LoginScreen()),
+                  );
+                },
                 linearGradient: LinearGradient(
                   colors: [darkpink, primaryColor],
                 ),
@@ -44,9 +51,23 @@ class SignupScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 10),
-              Text(
-                "Already have an account? Login",
-                style: style16.copyWith(color: Color(0xff909090)),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Already have an account? ",
+                    style: style16.copyWith(color: Color(0xff909090)),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Get.to(LoginScreen());
+                    },
+                    child: Text(
+                      "login",
+                      style: style16.copyWith(color: primaryColor),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

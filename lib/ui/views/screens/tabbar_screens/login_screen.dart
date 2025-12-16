@@ -3,38 +3,47 @@ import 'package:stepexpert/core/constant/auth_decoration.dart';
 import 'package:stepexpert/core/constant/colors.dart';
 import 'package:stepexpert/core/constant/text_style.dart';
 import 'package:stepexpert/ui/views/custom_widgets/custom_buttons.dart';
+import 'package:stepexpert/ui/views/screens/root_screen/root_screen.dart';
+import 'package:stepexpert/ui/views/screens/tabbar_screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-              TextFormField(
-                decoration: authdecoration.copyWith(hintText: "User name "),
-              ),
-              SizedBox(height: 10),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextFormField(
+              decoration: authdecoration.copyWith(hintText: "User name "),
+            ),
+            SizedBox(height: 20),
 
-              TextFormField(
-                obscureText: true,
-                decoration: authdecoration.copyWith(hintText: "Password"),
-              ),
-              SizedBox(height: 5),
-              Text(
-                "forgot password?",
-                style: style12.copyWith(color: Colors.red),
-                textAlign: TextAlign.end,
-              ),
-              SizedBox(height: 10),
-              CustomButtons1(
-                onTap: () {},
+            TextFormField(
+              obscureText: true,
+              decoration: authdecoration.copyWith(hintText: "Password"),
+            ),
+            SizedBox(height: 10),
+            Text(
+              "forgot password?",
+              style: style12.copyWith(color: Colors.red),
+              textAlign: TextAlign.end,
+            ),
+            SizedBox(height: 30),
+            Center(
+              child: CustomButtons1(
+                height: 42,
+                width: 297.36627197265625,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RootScreen()),
+                  );
+                },
                 linearGradient: LinearGradient(
                   colors: [darkpink, primaryColor],
                 ),
@@ -46,17 +55,33 @@ class LoginScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 10),
-              Center(
-                child: Text(
-                  "Already have an account? Signup",
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  "Don’t have an account? ",
                   style: style16.copyWith(color: Color(0xff909090)),
                 ),
-              ),
-            ],
-          ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => SignupScreen()),
+                    );
+                  },
+                  child: Text(
+                    "Signup",
+                    style: style16.copyWith(color: primaryColor),
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

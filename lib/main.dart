@@ -1,12 +1,13 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:stepexpert/ui/views/screens/profile_screen/profile.dart';
-import 'package:stepexpert/ui/views/screens/profile_screen/profile_subscreens/privacy_polic.dart';
-import 'package:stepexpert/ui/views/screens/profile_screen/profile_subscreens/termcondition.dart';
-import 'package:stepexpert/ui/views/screens/splash_screen.dart';
+import 'package:get/get.dart';
 import 'package:stepexpert/ui/views/screens/tabbar_screens/tabbarscreen.dart';
 
-void main() {
-  runApp(MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -14,6 +15,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Tabbarscreen());
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Tabbarscreen(),
+    );
   }
 }
