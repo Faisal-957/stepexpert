@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
 import 'package:stepexpert/core/constant/auth_decoration.dart';
 import 'package:stepexpert/core/constant/colors.dart';
 import 'package:stepexpert/core/constant/text_style.dart';
 import 'package:stepexpert/ui/views/custom_widgets/custom_buttons.dart';
 import 'package:stepexpert/ui/views/screens/root_screen/root_screen.dart';
-import 'package:stepexpert/ui/views/screens/tabbar_screens/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -67,10 +68,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SignupScreen()),
-                    );
+                    Get.to(RootScreen());
                   },
                   child: Text(
                     "Signup",

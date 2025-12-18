@@ -9,7 +9,7 @@ TextStyle style16 = GoogleFonts.poppins(
 );
 TextStyle style24 = GoogleFonts.poppins(
   fontSize: 24,
-  color: whiteColor,
+  color: blackColor,
   fontWeight: FontWeight.bold,
 );
 

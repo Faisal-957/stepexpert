@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:stepexpert/ui/views/screens/home_screen.dart';
+
+import 'package:stepexpert/ui/views/screens/homescreen.dart';
+
 import 'package:stepexpert/ui/views/screens/profile_screen/profile.dart';
 import 'package:stepexpert/ui/views/screens/workout_screen/workout_screen.dart';
 
