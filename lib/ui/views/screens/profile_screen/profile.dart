@@ -6,6 +6,7 @@ import 'package:stepexpert/ui/views/custom_widgets/custom_buttons.dart';
 import 'package:stepexpert/ui/views/screens/profile_screen/profile_subscreens/aboutus_screen.dart';
 import 'package:stepexpert/ui/views/screens/profile_screen/profile_subscreens/privacy_polic.dart';
 import 'package:stepexpert/ui/views/screens/profile_screen/profile_subscreens/termcondition.dart';
+import 'package:stepexpert/ui/views/screens/profile_screen/profile_subscreens/logout_screen.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -137,10 +138,7 @@ class Profile extends StatelessWidget {
                 Card(
                   child: InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => PrivacyPolic()),
-                      );
+                      LogoutBottomSheet.show(context);
                     },
                     child: ListTile(
                       contentPadding: EdgeInsets.symmetric(
