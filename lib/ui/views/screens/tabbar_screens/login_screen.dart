@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 import 'package:stepexpert/core/constant/auth_decoration.dart';
 import 'package:stepexpert/core/constant/colors.dart';
@@ -13,6 +14,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: whiteColor,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -40,10 +42,7 @@ class LoginScreen extends StatelessWidget {
                 height: 42,
                 width: 297.36627197265625,
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => RootScreen()),
-                  );
+                  Get.to(RootScreen());
                 },
                 linearGradient: LinearGradient(
                   colors: [darkpink, primaryColor],
@@ -68,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Get.to(RootScreen());
+                    DefaultTabController.of(context).animateTo(0);
                   },
                   child: Text(
                     "Signup",

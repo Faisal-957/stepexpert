@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:stepexpert/ui/views/screens/profile_screen/profile.dart';
-import 'package:stepexpert/ui/views/screens/profile_screen/profile_subscreens/edit_profile.dart';
+import 'package:stepexpert/ui/views/screens/tabbar_screens/tabbarscreen.dart';
 import 'firebase_options.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -23,7 +22,10 @@ class MyApp extends StatelessWidget {
         MediaQuery.sizeOf(context).width,
         MediaQuery.sizeOf(context).height,
       ),
-      child: GetMaterialApp(debugShowCheckedModeBanner: false, home: Profile()),
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Tabbarscreen(),
+      ),
     );
   }
 }

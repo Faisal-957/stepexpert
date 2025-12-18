@@ -35,6 +35,7 @@ class Tabbarscreen extends StatelessWidget {
                       height: 50,
                       width: 50,
                       decoration: BoxDecoration(
+                        color: whiteColor,
                         borderRadius: BorderRadius.circular(25),
                         gradient: const LinearGradient(
                           colors: [Color(0xffFE2B5F), Color(0xffD02E56)],
@@ -47,7 +48,7 @@ class Tabbarscreen extends StatelessWidget {
                     const SizedBox(height: 5),
 
                     Container(
-                      padding: EdgeInsets.only(left: 100, right: 100),
+                      padding: EdgeInsets.only(left: 90, right: 90),
                       child: TabBar(
                         labelColor: Color(0xffFE2B5F),
                         indicatorColor: Color(0xffFE2B5F),

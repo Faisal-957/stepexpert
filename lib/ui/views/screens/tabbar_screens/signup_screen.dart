@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:get/route_manager.dart';
 import 'package:stepexpert/core/constant/auth_decoration.dart';
 import 'package:stepexpert/core/constant/colors.dart';
 import 'package:stepexpert/core/constant/text_style.dart';
 import 'package:stepexpert/ui/views/custom_widgets/custom_buttons.dart';
-import 'package:stepexpert/ui/views/screens/tabbar_screens/login_screen.dart';
+import 'package:stepexpert/ui/views/screens/root_screen/root_screen.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -17,8 +17,11 @@ class SignupScreen extends StatelessWidget {
           padding: const EdgeInsets.all(20),
           child: Column(
             children: [
-              TextFormField(
-                decoration: authdecoration.copyWith(hintText: "User name "),
+              Container(
+                color: whiteColor,
+                child: TextFormField(
+                  decoration: authdecoration.copyWith(hintText: "User name "),
+                ),
               ),
               SizedBox(height: 10),
               TextFormField(
@@ -34,10 +37,7 @@ class SignupScreen extends StatelessWidget {
                 height: 42,
                 width: 297.36627197265625,
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
-                  );
+                  Get.to(RootScreen());
                 },
                 linearGradient: LinearGradient(
                   colors: [darkpink, primaryColor],
@@ -60,7 +60,7 @@ class SignupScreen extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Get.to(LoginScreen());
+                      DefaultTabController.of(context).animateTo(1);
                     },
                     child: Text(
                       "login",
